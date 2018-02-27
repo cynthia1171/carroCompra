@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Bootstrap HTML5">
+        <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    </head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+<body>
+    <div class="container-fluid">
+   
+        <section id="seccion" class="col-md-8">
+            <div class="row">
+      <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="thumbnail">
+          <img src="imagen1.png" data-holder-rendered="true">
+          <div class="caption">
+            <h3>Lorem ipsum.</h3>
+            <p>
+			<a href="#" class="btn btn-default producto" precio="15" titulo="Producto1" role="button">Comprar</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="thumbnail">
+          <img data-holder-rendered="true" src="imagen1.png">
+          <div class="caption">
+            <h3>Lorem ipsum.</h3>
+            <p>
+			<a href="#" class="btn btn-default producto" precio="11" titulo="Producto2" role="button">Comprar</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="thumbnail">
+          <img src="imagen1.png" data-holder-rendered="true">
+          <div class="caption">
+            <h3>Lorem ipsum.</h3>
+            <p>
+			<a href="#" class="btn btn-default producto" precio="13" titulo="Producto3" role="button">Comprar</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-3">
+        <div class="thumbnail">
+          <img src="imagen1.png" data-holder-rendered="true">
+          <div class="caption">
+            <h3>Lorem ipsum.</h3>
+            <p>
+			         <a href="#" class="btn btn-default producto" precio="12" titulo="Producto4" role="button">Comprar</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+            
+        </section>
+        </div>
+    </div>
+	<script src="minicart.js"></script>
+	<script>
+	  // configuración inicial del carrito 
+	  paypal.minicart.render({
+	  strings:{
+	    button:'Pagar'
+	   ,buttonAlt: "Total"
+	   ,subtotal: 'Total:'
+	   ,empty: 'No hay productos en el carrito'
+	  }
+	  });
+	  // Eventos para agregar productos al carrito
+	  
+	   $('.producto').click(function(e){
+	       e.stopPropagation();
+		    paypal.minicart.cart.add({
+  			business: 'cynthia.bussiness@gmail.com', // Cuenta paypal para recibir el dinero
+  			item_name: $(this).attr("titulo"),
+  			amount: $(this).attr("precio"),
+  			currency_code: 'USD'
+			});
+	   });
+	  
+	</script>
+	
+</body>
+</html>
+
+
+
+
